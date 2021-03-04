@@ -1,0 +1,49 @@
+@import '../../assets/style/index'
+
+.box
+    width: 100%
+    height: auto
+
+    background-color: $angel
+
+.boxContent
+    max-width: $standard_max_width
+    width: 100%
+    height: auto
+
+    margin: 0 auto
+    padding: $section_margin 0
+
+    display: grid
+    grid-template-columns: repeat(3, 1fr)
+    grid-gap: $section_margin
+
+    @include md
+        grid-template-columns: 1fr
+        grid-gap: calc(#{$section_margin} / 2)
+        padding: 7.5rem
+
+    @include sm
+        padding: 5rem
+
+    * h2
+        font-size: 1.7rem
+        text-transform: uppercase
+
+    * p, * a
+        font-size: 1.5rem
+
+    * span
+        font-size: 1.4rem
+
+.boxContact
+    > div
+        margin-top: 2rem
+        &:nth-child(1)
+            margin-top: 0
+
+        &:nth-child(2)
+            display: flex
+            flex-direction: column
+            justify-content: flex-start
+            align-items: flex-start

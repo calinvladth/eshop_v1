@@ -1,0 +1,59 @@
+@import '../../../../assets/style/index'
+
+.checkoutContent
+    padding-top: 7.5rem
+
+    display: grid
+    grid-template-columns: 55% 1fr
+    grid-gap: 2rem
+
+    @include md
+        grid-template-columns: 1fr
+
+
+    > div
+        width: 100%
+        height: auto
+
+        &:nth-child(1)
+            margin-top: 5px
+
+
+
+
+.preview
+    background-color: $angel
+    padding: 3rem 5rem 5rem 5rem
+
+    @include sm
+        padding: 3rem 1rem 5rem 1rem
+
+
+.form
+    width: 100%
+
+.formTitle
+    width: 100%
+    text-align: center
+
+    padding-bottom: 2.5rem
+
+
+.formContent
+    width: 100%
+    height: auto
+
+.customer
+    width: 100%
+    padding-bottom: 50px
+
+.authentication
+    width: 100%
+    padding-bottom: 50px
+
+.cart
+    width: 100%
+    padding-bottom: 50px
+
+.orderSummary
+    width: 100%

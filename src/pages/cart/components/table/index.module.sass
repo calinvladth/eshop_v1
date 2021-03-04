@@ -1,0 +1,44 @@
+@import "../../../../assets/style/index"
+
+$padding_side: 20px
+
+.box
+    width: 100%
+    min-width: 50rem
+    height: auto
+
+
+    > table
+        width: 100%
+        height: auto
+        border-collapse: collapse
+
+        > thead
+
+            > tr
+                border-bottom: .1rem solid $red
+
+                > td
+                    font-size: 1.5rem
+                    text-transform: capitalize
+
+                    &:nth-child(1)
+                        padding-left: $padding_side
+
+                    &:nth-last-child(1)
+                        text-align: end
+                        padding-right: $padding_side
+
+        > tbody
+
+            > tr
+                > td
+
+                    &:nth-last-child(1)
+                        text-align: end
+                        padding-right: $padding_side
+
+.placeholder
+    height: 25px
+
+

@@ -1,0 +1,97 @@
+@import "../../../../assets/style/index"
+
+.box
+    width: 100%
+    min-height: 60rem
+    height: 100vh
+    padding-top: $header-height
+
+    background-color: $rose
+
+    display: flex
+    justify-content: center
+    align-items: center
+
+
+.boxContent
+    $image_width: 35rem
+    width: 100%
+    height: auto
+    max-width: $standard_max_width
+    margin: 0 auto
+
+    padding: 0 7.5rem
+
+    display: grid
+    grid-template-columns: 1fr $image_width
+
+    @include md
+        grid-template-columns: 1fr
+
+    @include sm
+        padding: 0 2.5rem
+
+    > div
+
+        &:nth-child(1)
+            display: flex
+            justify-content: center
+            align-items: center
+
+        &:nth-child(2)
+            height: calc(#{$image_width} * 1.5)
+
+            @include md
+                height: auto
+
+    * h1
+        font-size: 3rem
+        text-transform: uppercase
+
+        @include md
+            text-align: center
+
+    * p
+        font-size: 1.6rem
+
+    * span
+        font-size: 1.4rem
+
+.boxDescription
+    width: 100%
+    height: auto
+    background-color: $angel
+
+    padding: 7.5rem 5rem
+
+    @include sm
+        padding: 5rem 2.5rem
+
+.boxDescriptionContent
+    width: 100%
+    height: 100%
+
+    border-left: .1rem solid $red
+
+    padding-left: 1rem
+
+    > div
+        margin-top: 2.5rem
+
+        &:nth-child(1)
+            margin-top: 0
+
+        &:nth-child(3)
+            display: flex
+            flex-direction: column
+            justify-content: flex-start
+            align-items: flex-start
+
+.boxImage
+    background-color: $angel
+
+    @include md
+        display: none
+
+
+

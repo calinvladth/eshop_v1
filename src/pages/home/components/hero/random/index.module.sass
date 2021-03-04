@@ -1,0 +1,28 @@
+@import '../../../../../assets/style/index'
+
+.box
+    width: 100%
+    height: auto
+
+    font-size: 1.6rem
+    text-transform: uppercase
+    letter-spacing: .2rem
+
+    @include sm
+        font-size: 1.3rem
+
+    > p
+        &:nth-child(1)
+            color: $black
+
+        &:nth-child(2)
+            color: rgb(118, 78, 69)
+
+        &:nth-child(3)
+            color: rgb(228, 105, 49)
+
+        &:nth-child(4)
+            color: rgb(229, 151, 133)
+
+
+

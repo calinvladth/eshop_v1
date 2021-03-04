@@ -1,0 +1,83 @@
+@import '../../assets/style/index'
+
+.box
+    width: 100%
+    min-height: 100vh
+    padding-top: $header_height
+    padding-bottom: 7.5rem
+
+    @include md
+        padding: $header_height 1rem 7.5rem 1rem
+
+.boxContent
+    width: 100%
+    max-width: $standard_max_width
+    height: auto
+    margin: 0 auto
+
+    * h1
+        font-size: 2rem
+        text-transform: uppercase
+
+    * p
+        font-size: 1.6rem
+
+.checkout
+    width: 100%
+    height: auto
+
+.checkoutTitle
+    width: 100%
+    text-align: center
+    padding-top: 8rem
+
+.checkoutContent
+    padding-top: 7.5rem
+
+    display: flex
+    justify-content: space-between
+    align-items: flex-start
+
+    > div
+        height: 100%
+
+        &:nth-child(1)
+            width: 55%
+            margin-top: .5rem
+
+
+        &:nth-child(2)
+            width: 45%
+
+            margin-left: 2rem
+            background-color: $angel
+            padding: 3rem 5rem 5rem 5rem
+
+.form
+    width: 100%
+
+.formTitle
+    width: 100%
+    text-align: center
+
+    padding-bottom: 2.5rem
+
+
+.formContent
+    width: 100%
+    height: auto
+
+.customer
+    width: 100%
+    padding-bottom: 5rem
+
+.authentication
+    width: 100%
+    padding-bottom: 5rem
+
+.cart
+    width: 100%
+    padding-bottom: 5rem
+
+.orderSummary
+    width: 100%

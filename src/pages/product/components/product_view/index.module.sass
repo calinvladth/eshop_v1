@@ -1,0 +1,102 @@
+@import '../../../../assets/style/index'
+
+
+$full_width_percent: 1
+$image_width_percent: 0.325
+
+// The detail and info have the same with, if the image width changes, so will they
+$detail_width_percent: calc((1 - #{$image_width_percent}) / 2)
+$info_width_percent: calc((1 - #{$image_width_percent}) / 2)
+
+
+.box
+    width: 100%
+    height: 100%
+
+    display: flex
+    justify-content: center
+    align-items: center
+
+    * h1
+        font-size: 2rem
+        text-transform: uppercase
+
+    * p
+        font-size: 1.6rem
+
+    * button
+        text-transform: uppercase
+
+
+.boxContent
+    $section_size: 32.5rem
+    width: 100%
+    height: auto
+
+    display: grid
+    grid-template-columns: $section_size 1fr $section_size
+    grid-gap: 5rem
+
+    > div
+        width: 100%
+        height: auto
+        position: relative
+
+        @include md
+            overflow: hidden
+
+    @include md
+        grid-template-columns: repeat(2, 1fr)
+        grid-template-rows: auto
+        padding: 0 1rem
+        grid-row-gap: 1rem
+
+    @include xsm
+        grid-template-columns: 1fr
+
+.boxTitle
+    padding-top: $section_margin
+
+    @include md
+        padding: 1rem 0 0
+
+.boxSection
+    margin-top: 3rem
+
+.bar
+    width: 50vw
+    height: .1rem
+    background-color: $red
+
+    position: absolute
+
+    @include xsm
+        width: 100%
+
+.barLeft
+    left: 0
+
+    @include xsm
+        right: 0
+
+
+.barRight
+    right: 0
+    @include xsm
+        left: 0
+
+.largeView
+    @include md
+        display: none
+
+    @include xsm
+        display: block
+
+.mediumView
+    display: none
+    @include md
+        display: block
+        margin-top: calc(#{$section_margin} / 2)
+
+    @include xsm
+        display: none

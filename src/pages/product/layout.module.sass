@@ -1,0 +1,34 @@
+@import '../../assets/style/index'
+
+.box
+    width: 100%
+    height: auto
+    min-height: 100vh
+
+    padding-top: $header_height
+    padding-bottom: 75px
+
+    @include md
+        padding-top: 15rem
+
+.boxContent
+    width: 100%
+    max-width: $standard_max_width
+    height: auto
+    margin: 0 auto
+
+    > section
+        margin-top: $section_margin
+
+        &:nth-child(1)
+            margin-top: 0
+
+    > p
+        font-size: 1.5rem
+
+
+.relatedProducts
+    width: 100%
+    height: auto
+    margin-top: $section-margin
+

@@ -1,0 +1,35 @@
+@import '../../assets/style/index'
+
+.box
+    width: 100%
+    height: auto
+
+.boxContent
+    width: 100%
+    max-width: $standard_max_width
+    margin: 0 auto
+
+    position: relative
+
+    > div
+        &:nth-child(2)
+            margin-top: $section_margin
+
+.boxProducts
+    width: 100%
+    display: grid
+    grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr))
+    grid-gap: 7.5rem
+
+    @include md
+        padding: 0 1rem
+
+    @include sm
+        grid-template-columns: repeat(auto-fill, minmax(27.5rem, 1fr))
+
+    > div
+        width: 100%
+        height: auto
+
+    > p
+        font-size: 1.6rem

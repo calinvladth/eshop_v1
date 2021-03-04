@@ -1,0 +1,48 @@
+@import '../../assets/style/index'
+
+
+.box
+    $size: 2rem
+    z-index: 100
+
+    display: flex
+
+    > span
+        width: $size
+        height: $size
+        //border: .1rem solid $black
+
+        display: flex
+        justify-content: center
+        align-items: center
+
+        cursor: pointer
+
+        &:hover
+            opacity: .8
+
+        > a
+            width: 100%
+            height: 100%
+            >img
+                width: inherit
+                height: inherit
+
+
+.vertical
+    flex-direction: column
+    > span
+        margin-top: .75rem
+
+        &:nth-child(1)
+            margin-top: 0
+
+
+.horizontal
+    flex-direction: row
+
+    > span
+        margin-left: .5rem
+
+        &:nth-child(1)
+            margin-left: 0

@@ -1,0 +1,151 @@
+@import "../../../../assets/style/index"
+
+.box
+    width: 100%
+    height: 100vh
+    min-height: 60rem
+
+    background-color: $angel
+
+    @include md
+        padding-top: 15rem
+        padding-bottom: $section_margin
+        height: auto
+
+.boxContent
+    width: 100%
+    height: 100%
+    max-width: $standard_max_width
+    margin: 0 auto
+
+    display: flex
+    justify-content: center
+    align-items: center
+
+    position: relative
+
+
+.boxImages
+    width: 55%
+    height: auto
+
+    display: grid
+    grid-template-columns: repeat(2, 1fr)
+    grid-gap: 1.5rem
+
+
+    @include md
+        grid-template-columns: 1fr
+
+    @include xsm
+        width: 75%
+
+
+
+    > div
+        width: 100%
+        height: 45rem
+
+        background-color: $rose
+
+        @include md
+            height: 70vh
+            min-height: 50rem
+
+        &:nth-child(1)
+            position: relative
+            z-index: 100
+
+            > div
+                position: absolute
+
+                &:nth-child(1)
+                    width: 100%
+                    height: 100%
+                    top: -5rem
+                    left: 0
+                    z-index: 100
+
+                    @include md
+                        top: 0
+
+                &:nth-child(2)
+                    width: 140%
+                    height: 110%
+
+                    top: 50%
+                    left: 50%
+                    transform: translate(-55%, -49%)
+                    background-color: $rose
+                    z-index: 10
+
+                    @include md
+                        background-color: transparent
+
+        &:nth-child(2)
+            position: relative
+            z-index: 100
+
+            top: 5rem
+
+            @include md
+                display: none
+                top: 0
+
+
+.boxIcons
+    position: absolute
+    bottom: 0
+    right: 102.5%
+    z-index: 100
+
+
+.boxLogo
+    $size: 10rem
+    position: absolute
+    top: 5%
+    right: 112.5%
+    z-index: 100
+
+    @include md
+        top: 20%
+        right: 87.5%
+
+    @include sm
+        $size: 7rem
+
+    > span
+        width: $size
+        height: $size
+
+        display: flex
+        justify-content: center
+        align-items: center
+
+
+.boxRandom
+    position: absolute
+    top: 75%
+    right: 5%
+
+    z-index: 100
+
+    display: flex
+    justify-content: flex-start
+    align-items: flex-start
+
+    @include md
+        top: 87.5%
+        right: 17.5%
+
+//.firstImage
+//    bottom: 2.5rem
+//
+//    > div
+//        &:nth-child(1)
+//            background-color: red
+//
+//            position: absolute
+//            bottom: 10rem
+//            width: 100%
+//            height: 100%

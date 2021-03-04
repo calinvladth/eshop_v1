@@ -1,0 +1,128 @@
+@import "../../../../assets/style/index"
+
+.tableCartComponent
+    $productbox_width: 250px
+    $detailsbox_width: 100px
+
+    $productbox_image: calc(#{$productbox_width} / 2.5)
+    $productbox_name: calc(#{$productbox_width} - #{$productbox_image})
+
+    $pricebox_width: calc((100% - #{$productbox_width}) / 3)
+
+    $padding_side: 20px
+
+    min-height: 350px
+
+
+    > table
+        width: 100%
+        height: auto
+        border-collapse: collapse
+
+        > thead
+
+            > tr
+                border-bottom: 1rem solid $red
+
+                > td
+                    font-size: 15px
+                    text-transform: capitalize
+
+                    &:nth-child(1)
+                        padding-left: $padding_side
+
+                    &:nth-last-child(1)
+                        text-align: end
+                        padding-right: $padding_side
+
+        > tbody
+
+            > tr
+                > td
+
+                    &:nth-last-child(1)
+                        text-align: end
+                        padding-right: $padding_side
+
+    &__placeholder
+        height: 25px
+
+    &__productbox
+        width: $productbox_width
+        min-height: 125px
+        padding-bottom: 25px
+
+        display: flex
+        justify-content: flex-start
+        align-items: flex-start
+
+        &--image
+            width: $productbox_image
+            height: $productbox_image
+
+            position: relative
+
+            > img
+                position: absolute
+                top: 0
+                left: 0
+                right: 0
+                max-width: 100%
+                max-height: 100%
+                margin: auto
+
+        &--details
+            width: $productbox_name
+            height: 100%
+
+        &--paragraph
+            > p
+                font-size: 14px
+                //line-height: 15px
+                text-transform: capitalize
+
+        &--remove
+            margin-top: 15px
+            cursor: pointer
+
+            > p
+                font-size: 14px
+                text-decoration: underline
+                color: $blue
+
+                &:hover
+                    color: $red
+
+    &__pricebox,
+    &__quantitybox,
+    &__totalbox
+        width: $detailsbox_width
+        height: 100%
+
+        vertical-align: top
+        text-align: start
+
+        > p
+            font-size: 14px
+
+    &__totalbox
+        text-align: end
+
+    &__quantitybox--quantity
+        $input_size: 40px
+        $button_size: calc(#{$input_size} / 2)
+        $quantity_width: calc(#{$input_size} + (#{$input_size} / 2))
+        $quantity_height: $input_size
+        width: $quantity_width
+        height: $quantity_height
+
+
+        > input[type=number]
+            width: $input_size
+            height: $input_size
+
+        &-button
+            width: $button_size
+            height: $button_size
+
+

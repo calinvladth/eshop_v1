@@ -1,0 +1,32 @@
+@import '../../../../assets/style/index'
+
+.box
+    width: 100%
+    height: auto
+
+    @include md
+        padding: 0 1rem
+
+    > div
+        border: .1rem solid $black
+
+        &:nth-child(1)
+            text-align: center
+            padding: 1rem
+            background-color: $rose
+            border-color: $rose
+
+        &:nth-child(2)
+            padding: $section_margin
+
+            @include md
+                padding: calc(#{$section_margin} / 2)
+
+    * h1
+        font-size: 1.8rem
+        text-transform: uppercase
+
+    * p
+        font-size: 1.6rem
+
+

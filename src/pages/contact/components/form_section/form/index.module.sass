@@ -1,0 +1,30 @@
+@import '../../../../../assets/style/index'
+
+.box
+    margin: 0 auto
+
+.form
+    > div
+        margin-top: 3rem
+
+        &:nth-child(1)
+            margin-top: 0
+
+    * input
+        width: 100%
+
+    * textarea
+        width: 100%
+        height: 25rem
+
+    * button
+        @include sm
+            width: 100%
+
+.formGroup
+    display: grid
+    grid-template-columns: repeat(2, 1fr)
+    grid-gap: 2rem
+
+    @include sm
+        grid-template-columns: 1fr

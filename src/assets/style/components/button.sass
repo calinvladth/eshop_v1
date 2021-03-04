@@ -1,0 +1,39 @@
+.button
+    $border_size: 1px
+    cursor: pointer
+    border: $border_size solid transparent
+    background-color: transparent
+    color: $black
+
+    outline: none
+
+    font-size: 1.6rem
+    font-family: $font-main
+    text-transform: capitalize
+    font-weight: 400
+
+    min-width: 20rem
+    min-height: 5rem
+    padding: 1rem 2.5rem
+
+    &:focus,
+    &::-moz-focus-inner
+        outline: none
+        border: $border_size solid transparent
+
+    &--full
+        background-color: $rose
+
+    &--full-red
+        background-color: $red
+        color: $white
+
+    &--border
+        border-color: $rose
+
+        &:focus
+            border-color: $rose
+
+    &--long
+        width: 100%
+

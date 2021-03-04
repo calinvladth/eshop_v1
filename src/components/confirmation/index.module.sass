@@ -1,0 +1,37 @@
+@import '../../assets/style/index'
+
+.box
+    width: 100%
+    height: auto
+    padding-top: $header_height
+
+.boxContent
+    width: 100%
+    max-width: $standard_max_width
+    min-height: 60rem
+    height: calc(100vh - #{$header_height})
+    margin: 0 auto
+
+    display: flex
+    justify-content: center
+    align-items: flex-start
+
+    > div
+        margin-top: 7.5rem
+
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+
+.icon
+    $size: 7.5rem
+    width: $size
+    height: $size
+
+    margin-bottom: 2.5rem
+
+.children
+    width: auto
+    height: auto
+
