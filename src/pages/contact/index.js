@@ -2,6 +2,7 @@ import React, {useEffect} from 'react'
 import style from './layout.module.sass'
 import HeroComponent from "./components/hero";
 import FormSectionComponent from "./components/form_section";
+import ScrollIntoView from "../../components/scroll_into_view";
 
 
 const ContactPage = () => {
@@ -9,16 +10,17 @@ const ContactPage = () => {
         document.title = 'Contact'
     }, [])
     return (
-        <div className={style.box}>
+        <ScrollIntoView>
+            <div className={style.box}>
+                <section>
+                    <HeroComponent/>
+                </section>
 
-            <section>
-                <HeroComponent/>
-            </section>
-
-            <section>
-                <FormSectionComponent/>
-            </section>
-        </div>
+                <section>
+                    <FormSectionComponent/>
+                </section>
+            </div>
+        </ScrollIntoView>
     )
 }
 

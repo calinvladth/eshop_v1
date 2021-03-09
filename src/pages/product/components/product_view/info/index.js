@@ -29,6 +29,7 @@ const InfoComponent = ({product = {}, specs = []}) => {
             </div>
             <div>
                 <div className={style.specs}>
+                    <p>Category - {product.data.category.category.name}</p>
                     {
                         specs.map((o, i) => <p key={o.id}>{o.key} - {o.value}</p>)
                     }

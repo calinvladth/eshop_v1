@@ -1,7 +1,10 @@
 @import '../../assets/style/index'
 
+$item_size: 3rem
+
 .box
     position: relative
+
 
 .boxChild
     width: 100%
@@ -14,6 +17,9 @@
 
     display: grid
     grid-template-columns: repeat(2, 1fr)
+
+    @include md
+        padding: 0 1rem
 
     @include sm
         grid-template-columns: 1fr
@@ -48,11 +54,15 @@
     //justify-content: center
     align-items: center
 
+    //> div,
+    //> span
+    //    border: .1rem solid $black
+
+
 .page
-    $size: 3rem
     color: $black
-    width: $size
-    height: $size
+    width: $item_size
+    height: $item_size
     display: flex
     justify-content: center
     align-items: center
@@ -65,16 +75,15 @@
         color: $dark_grey
 
 .pageChange
-    $size: 4rem
-    width: $size
-    height: $size
-    padding: 1.25rem
+    width: $item_size
+    height: $item_size
+
+    padding: .8rem 0
 
     > span
         $size: 1.25rem
-        margin-top: calc(#{$size} / 2)
-        height: $size
-        width: $size
+        height: 100%
+        width: 100%
 
 .current
     color: $dark_grey
