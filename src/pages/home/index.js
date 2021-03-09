@@ -15,13 +15,15 @@ const HomePage = () => {
     const location = useLocation()
 
     const shopRef = createRef()
+    const shopRef1 = createRef()
 
     document.title = "Shop";
     useEffect(() => {
         if (location.hash === ShopHash) {
             if (shopRef && shopRef.current) shopRef.current.scrollIntoView({behavior: 'smooth', block: 'start'})
+            else shopRef1.current.scrollIntoView({behavior: 'smooth', block: 'start'})
         }
-    }, [shopRef, location])
+    }, [shopRef, shopRef1, location])
 
 
     return (
@@ -32,7 +34,7 @@ const HomePage = () => {
             <section>
                 <AboutComponent/>
             </section>
-            <section>
+            <section ref={shopRef1}>
                 <ShopSectionComponent shopRef={shopRef}/>
             </section>
         </div>

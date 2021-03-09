@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {createRef, useEffect, useState} from 'react';
 import Routes from "./pages/routes";
 import './assets/style/index.sass'
 import {useDispatch} from "react-redux";
@@ -12,9 +12,10 @@ import LoadingComponent from "./components/loading";
 
 function App() {
     const [server, setServer] = useState(null)
+
     useEffect(() => {
         axios.get(`${api}/check_server/`).then(handleSuccess, handleError)
-    },[server])
+    }, [server])
 
 
     function handleSuccess() {
@@ -35,14 +36,18 @@ const AppStore = () => {
     const dispatch = useDispatch()
     dispatch(GetConfig())
     dispatch(RenderCartData())
+    const appRef = createRef()
+
+    useEffect(() => {
+        appRef.current.scrollIntoView()
+    }, [appRef])
 
     const style = {
         overflowX: 'hidden'
     }
 
     return (
-        <div style={style}>
-
+        <div style={style} ref={appRef}>
             <Routes/>
             <ToastComponent/>
         </div>

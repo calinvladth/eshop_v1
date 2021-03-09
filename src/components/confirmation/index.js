@@ -1,12 +1,13 @@
-import React, {useEffect} from "react";
+import React, {createRef, useEffect} from "react";
 import style from './index.module.sass'
 
 const ConfirmationComponent = ({icon, children}) => {
+    const confirmationRef = createRef()
     useEffect(() => {
-        window.scrollTo(0, 0)
-    }, [])
+        confirmationRef.current.scrollIntoView()
+    }, [confirmationRef, icon])
     return (
-        <div className={style.box}>
+        <div className={style.box} ref={confirmationRef}>
             <div className={style.boxContent}>
 
                 <div>
