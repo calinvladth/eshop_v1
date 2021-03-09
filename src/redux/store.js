@@ -11,7 +11,7 @@ const store = createStore(
     initialState,
     compose(
         applyMiddleware(...middleware),
-        // window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+        process.env.REACT_APP_ENV === 'development' && window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
     )
 );
 
