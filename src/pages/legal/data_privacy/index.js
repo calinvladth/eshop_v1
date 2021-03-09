@@ -1,5 +1,6 @@
 import React, {useEffect} from "react";
 import style from '../index.module.sass'
+import {legalPagesData} from "../../../data";
 
 export const DataPrivacyPath = '/data_privacy'
 
@@ -11,7 +12,7 @@ const DataPrivacyPage = () => {
     return (
         <div className={style.box}>
             <div className={style.boxContent}>
-                <h1>Data privacy</h1>
+                {legalPagesData.data_privacy}
             </div>
         </div>
     )

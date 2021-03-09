@@ -2,6 +2,7 @@ import React, {useEffect} from "react";
 import ConfirmationComponent from "../../components/confirmation";
 import style from './index.module.sass'
 import ServerSvg from "../../assets/icons/server";
+import {errorData} from "../../data";
 
 const ServerErrorPage = () => {
     useEffect(() => {
@@ -10,8 +11,8 @@ const ServerErrorPage = () => {
     return (
         <ConfirmationComponent icon={<ServerSvg/>}>
             <div className={style.box}>
-                <p className="font font__subtitle font__subtitle--big">Thank you for your patience</p>
-                <p className="font__paragraph">Our servers are down. Please come back later</p>
+                <p className="font font__subtitle font__subtitle--big">{errorData.server_down.title}</p>
+                <p className="font__paragraph">{errorData.server_down.message}</p>
             </div>
         </ConfirmationComponent>
     )

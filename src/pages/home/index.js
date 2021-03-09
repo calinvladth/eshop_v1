@@ -7,7 +7,7 @@ import AboutComponent from "./components/about";
 
 export const HomePath = '/'
 const shop = 'shop'
-const ShopHash = `#${shop}`
+export const ShopHash = `#${shop}`
 export const ShopPath = `${HomePath}${ShopHash}`
 
 
@@ -16,10 +16,10 @@ const HomePage = () => {
 
     const shopRef = createRef()
 
+    document.title = "Shop";
     useEffect(() => {
-        document.title = "Shop";
         if (location.hash === ShopHash) {
-            window.scrollTo(0, shopRef.current.offsetTop)
+            if (shopRef && shopRef.current) shopRef.current.scrollIntoView({behavior: 'smooth', block: 'start'})
         }
     }, [shopRef, location])
 
@@ -32,8 +32,7 @@ const HomePage = () => {
             <section>
                 <AboutComponent/>
             </section>
-
-            <section ref={shopRef}>
+            <section>
                 <ShopSectionComponent shopRef={shopRef}/>
             </section>
         </div>

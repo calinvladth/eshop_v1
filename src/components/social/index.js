@@ -1,11 +1,11 @@
 import React from "react";
 import style from './index.module.sass'
-import {socials} from "./data";
+import {socialMediaData} from "../../data";
 
 const SocialComponent = ({horizontal = true}) => (
     <div className={`${style.box} ${horizontal ? style.horizontal : style.vertical}`}>
         {
-            socials.map(o => <span key={o.name}>
+            socialMediaData.map(o => <span key={o.name}>
                 <a
                     href={o.link}
                     target="_blank"

@@ -4,6 +4,7 @@ import axios from "axios";
 import {api} from "../../../config";
 import {useDispatch} from "react-redux";
 import {SetAlert} from "../../../redux/alerts/actions";
+import {newsletterData} from "../../../data";
 
 const NewsLetterComponent = () => {
     const [email, setEmail] = useState('')
@@ -32,7 +33,7 @@ const NewsLetterComponent = () => {
                 <h2>Newsletter</h2>
             </div>
             <div>
-                <p>Sign up for exciting sales and updates about our new products.</p>
+                <p>{newsletterData.reason}</p>
             </div>
 
             <div>

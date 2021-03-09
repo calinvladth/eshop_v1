@@ -1,8 +1,9 @@
 import React, {useEffect, useState} from 'react'
 import style from './index.module.sass'
+import {homepageData} from "../../../../../data";
 
 const RandomComponent = () => {
-    const words = 'Your favorite store.'
+    const words = homepageData.slogan
     const [number, setNumber] = useState(0)
 
     useEffect(() => {

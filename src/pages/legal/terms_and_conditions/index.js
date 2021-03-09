@@ -1,5 +1,6 @@
 import React, {useEffect} from "react";
 import style from "../index.module.sass";
+import {legalPagesData} from "../../../data";
 
 export const TermsAndConditionsPath = '/terms_and_conditions'
 
@@ -10,7 +11,7 @@ const TermsAndConditionsPage = () => {
     return (
         <div className={style.box}>
             <div className={style.boxContent}>
-                <h1>Terms and conditions</h1>
+                {legalPagesData.terms_and_conditions}
             </div>
         </div>
     )

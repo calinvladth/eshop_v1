@@ -1,5 +1,6 @@
 import React, {useEffect} from "react";
 import style from "../index.module.sass";
+import {legalPagesData} from "../../../data";
 
 export const ShippingAndRefundPath = '/shipping_and_refund'
 
@@ -10,7 +11,7 @@ const ShippingAndRefundPage = () => {
     return (
         <div className={style.box}>
             <div className={style.boxContent}>
-                <h1>Shipping and refund</h1>
+                {legalPagesData.shipping_and_refund}
             </div>
         </div>
     )

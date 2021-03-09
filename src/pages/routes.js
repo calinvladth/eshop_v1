@@ -20,6 +20,7 @@ import DataPrivacyPage, {DataPrivacyPath} from "./legal/data_privacy";
 import PaymentMethodsPage, {PaymentMethodsPath} from "./legal/payment_methods";
 import ShippingAndRefundPage, {ShippingAndRefundPath} from "./legal/shipping_and_refund";
 import TermsAndConditionsPage, {TermsAndConditionsPath} from "./legal/terms_and_conditions";
+import NewsletterSuccessPage, {NewsletterSuccessPath} from "./newsletter_success";
 
 
 const Routes = () => {
@@ -38,10 +39,10 @@ const Routes = () => {
                     <Route path={CartPath}><CartPage/></Route>
                     {/*Checkout Page*/}
                     <Route path={CheckoutPath}><CheckoutPage/></Route>
-                    {/*Order Success Page*/}
+                    {/*Success Pages*/}
                     <Route path={OrderSuccessPath}><OrderSuccessPage/></Route>
-                    {/*Message Success*/}
                     <Route path={MessageSuccessPath}><MessageSuccessPage/></Route>
+                    <Route path={NewsletterSuccessPath}><NewsletterSuccessPage/></Route>
                     {/*Legal*/}
                     <Route path={DataPrivacyPath} exact><DataPrivacyPage/></Route>
                     <Route path={PaymentMethodsPath} exact><PaymentMethodsPage/></Route>

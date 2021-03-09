@@ -6,7 +6,7 @@ import ActiveImageComponent from "./active_image";
 import DetailsComponent from "./details";
 import InfoComponent from "./info";
 
-const ProductViewProductComponent = () => {
+const ProductViewProductComponent = ({productRef}) => {
     const config = useSelector(state => state.config)
     const currency = config.data.payment.currency
 
@@ -28,7 +28,7 @@ const ProductViewProductComponent = () => {
 
     return (
         <div className={style.box}>
-            <div className={style.boxContent}>
+            <div className={style.boxContent} ref={productRef}>
                 <div>
                     <div className={style.boxTitle}>
                         <h1>{product.data.name}</h1>

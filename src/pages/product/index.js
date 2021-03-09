@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React, {createRef, useEffect} from 'react'
 import style from './layout.module.sass'
 import ProductViewProductComponent from "./components/product_view";
 import RelatedProductsComponent from "./components/related_products";
@@ -9,16 +9,18 @@ import DescriptionFullComponent from "./components/description_full";
 import SectionTitleComponent from "../../components/section_title";
 import LoadingComponent from "../../components/loading";
 import NotFoundComponent from "../../components/not_found";
+import {ShopPath} from "../home";
+import {useHistory} from "react-router";
 
 const ProductPage = () => {
     const dispatch = useDispatch()
+    const history = useHistory()
     const {product} = useSelector(state => state)
     const {id} = useParams()
+    const productRef = createRef()
 
 
     useEffect(() => {
-
-        window.scrollTo(0, 0)
         dispatch(GetProductByPk(id))
 
         return function cleanup() {
@@ -28,7 +30,14 @@ const ProductPage = () => {
     }, [id, dispatch])
 
     useEffect(() => {
-        if (product.success && product.loaded) document.title = product.data.name
+        if (product.success && product.loaded) {
+            document.title = product.data.name
+            productRef.current.scrollIntoView()
+        }
+        if (product.loaded) {
+            if (!product.success) history.push(ShopPath)
+        }
+        // eslint-disable-next-line
     }, [product.success, product.loaded, product.data.name])
 
 
@@ -38,7 +47,7 @@ const ProductPage = () => {
                 <div className={style.boxContent}>
 
                     <section>
-                        <ProductViewProductComponent/>
+                        <ProductViewProductComponent productRef={productRef}/>
                     </section>
 
                     <section>

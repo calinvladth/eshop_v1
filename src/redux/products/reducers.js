@@ -1,12 +1,12 @@
 import {PRODUCTS_GET_SUCCESS} from "./types";
-import {pagination} from "./services";
 
 const initialState = {
     success: false,
     message: '',
     data: [],
     pagination: {},
-    filters: {}
+    filters: {},
+    loaded: false
 }
 
 const ProductsReducer = (state = initialState, action) => {
@@ -15,13 +15,10 @@ const ProductsReducer = (state = initialState, action) => {
             return {
                 ...state,
                 ...action.data,
-                data: pagination(action.data.data, action.limit, action.page),
-                pagination: {
-                    limit: action.limit,
-                    total_pages: Math.ceil(action.data.data.length / action.limit),
-                    total_items: action.data.data.length
-                },
-                filters: action.filters
+                data: action.data.data,
+                pagination: action.data.pagination,
+                filters: action.data.filters,
+                loaded: true
             }
 
         default:

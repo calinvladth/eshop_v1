@@ -1,11 +1,9 @@
 import React from 'react'
 import style from './index.module.sass'
 import {setBackgroundImage} from "../../../../services/image";
-import FirstImage from '../../../../assets/images/jocelyn-morales-194bECy6A64-unsplash.jpg'
-import SecondImage from '../../../../assets/images/jocelyn-morales-i7oPlKjczUs-unsplash.jpg'
 import SocialComponent from "../../../../components/social";
 import RandomComponent from "./random";
-import SpinGif from '../../../../assets/images/spin.gif'
+import {homepageData} from "../../../../data";
 
 const HeroComponent = () => {
     return (
@@ -14,7 +12,7 @@ const HeroComponent = () => {
 
                 <div className={style.boxImages}>
                     <div className={style.firstImage}>
-                        <div style={setBackgroundImage(FirstImage)}>&nbsp;</div>
+                        <div style={setBackgroundImage(homepageData.image_1)}>&nbsp;</div>
                         <div>&nbsp;</div>
                         <div className={style.boxIcons}>
                             <SocialComponent horizontal={false}/>
@@ -22,11 +20,11 @@ const HeroComponent = () => {
 
                         <div className={style.boxLogo}>
                             <span>
-                                <img src={SpinGif} alt="" width="100%"/>
+                                <img src={homepageData.spinner} alt="" width="100%"/>
                             </span>
                         </div>
                     </div>
-                    <div className={style.secondImage} style={setBackgroundImage(SecondImage)}>&nbsp;</div>
+                    <div className={style.secondImage} style={setBackgroundImage(homepageData.image_2)}>&nbsp;</div>
                 </div>
 
                 <div className={style.boxRandom}>

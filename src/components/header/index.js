@@ -1,12 +1,12 @@
 import React from "react";
 import style from './index.module.sass'
-import Logo from "../../assets/images/logo.png";
 import {Link, useHistory, useLocation} from "react-router-dom";
 import {HomePath, ShopPath} from "../../pages/home";
 import {ContactPath} from "../../pages/contact/path";
 import {CartPath} from "../../pages/cart/path";
 import {useSelector} from "react-redux";
 import CartSvg from "../../assets/icons/cart";
+import {headerData} from "../../data";
 
 const HeaderComponent = () => {
     const location = useLocation()
@@ -15,12 +15,12 @@ const HeaderComponent = () => {
     const cart = useSelector(state => state.cart)
 
     return (
-        <div className={style.box}>
+        <header className={style.box}>
             <div className={style.boxContent}>
 
                 <div className={style.logoBox}>
                     <div className={style.logo} onClick={() => history.push(HomePath)}>
-                        <img src={Logo} alt=""/>
+                        <img src={headerData.logo} alt=""/>
                     </div>
                 </div>
                 <div className={style.contentBox}>
@@ -64,7 +64,7 @@ const HeaderComponent = () => {
                 </div>
 
             </div>
-        </div>
+        </header>
     )
 }
 

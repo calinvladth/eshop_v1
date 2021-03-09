@@ -1,8 +1,7 @@
 import React from "react";
 import style from './index.module.sass'
 import {setBackgroundImage} from "../../../../services/image";
-
-import ContactImage from '../../../../assets/images/contact.jpg'
+import {contactData, contactpageData} from "../../../../data";
 
 const HeroComponent = () => (
     <div className={style.box}>
@@ -11,20 +10,20 @@ const HeroComponent = () => (
                 <div className={style.boxDescription}>
                     <div className={style.boxDescriptionContent}>
                         <div>
-                            <h1>Contact us</h1>
+                            <h1>{contactpageData.title}</h1>
                         </div>
                         <div>
-                            <p>Fell free to contact us and we will get back to you as soon as possible.</p>
+                            <p>{contactpageData.subtitle}</p>
                         </div>
                         <div>
-                            <span>232 Bubby Drive. Austin Texas</span>
-                            <span>512-563-3420</span>
-                            <span>example@email.com</span>
+                            <span>{contactData.address}</span>
+                            <span>{contactData.phone}</span>
+                            <span>{contactData.email}</span>
                         </div>
                     </div>
                 </div>
             </div>
-            <div className={style.boxImage} style={setBackgroundImage(ContactImage)}>&nbsp;</div>
+            <div className={style.boxImage} style={setBackgroundImage(contactpageData.image)}>&nbsp;</div>
         </div>
     </div>
 )

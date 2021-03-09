@@ -1,6 +1,7 @@
 import React from "react";
 import style from "./index.module.sass";
 import SocialComponent from "../../social";
+import {contactData} from "../../../data";
 
 const ContactComponent = () => (
     <div className={style.box}>
@@ -8,9 +9,9 @@ const ContactComponent = () => (
             <h2>Contact</h2>
         </div>
         <div>
-            <span>232 Bubby Drive. Austin Texas</span>
-            <span>512-563-3420</span>
-            <span>example@email.com</span>
+            <span>{contactData.address}</span>
+            <span>{contactData.phone}</span>
+            <span>{contactData.email}</span>
         </div>
         <div>
             <SocialComponent/>

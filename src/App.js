@@ -2,7 +2,6 @@ import React, {useEffect, useState} from 'react';
 import Routes from "./pages/routes";
 import './assets/style/index.sass'
 import {useDispatch} from "react-redux";
-import {GetProducts} from "./redux/products/actions";
 import {RenderCartData} from "./redux/cart/actions";
 import axios from "axios";
 import {api} from "./config";
@@ -35,7 +34,6 @@ function App() {
 const AppStore = () => {
     const dispatch = useDispatch()
     dispatch(GetConfig())
-    dispatch(GetProducts())
     dispatch(RenderCartData())
 
     const style = {

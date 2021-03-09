@@ -18,13 +18,12 @@ const ProductReducer = (state = initialState, action) => {
 
         case CLEAR_PRODUCT_STATE:
             return {
-                ...initialState
+                ...initialState,
             }
-
+            
         default:
             return {
-                ...state,
-                loaded: true
+                ...state
             }
     }
 }

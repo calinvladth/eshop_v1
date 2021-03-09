@@ -1,5 +1,6 @@
 import React, {useEffect} from "react";
 import style from '../index.module.sass'
+import {legalPagesData} from "../../../data";
 
 export const PaymentMethodsPath = '/payment_methods'
 
@@ -10,7 +11,7 @@ const PaymentMethodsPage = () => {
     return (
         <div className={style.box}>
             <div className={style.boxContent}>
-                <h1>Payment methods / Accepted payment types</h1>
+                {legalPagesData.payment_method}
             </div>
         </div>
     )
