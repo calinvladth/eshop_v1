@@ -33,9 +33,9 @@ const TableRowCartComponent = ({product}) => {
                     <div className={style.productParagraph}>
                         <p className="font__paragraph">{product.name}</p>
                     </div>
-                    <div className={style.productParagraph}>
-                        <p className="paragraph">{product.category.category.name}</p>
-                    </div>
+                    {/*<div className={style.productParagraph}>*/}
+                    {/*    <p className="paragraph">{product.category.category.name}</p>*/}
+                    {/*</div>*/}
                     <div className={style.productRemove}>
                         <p className="font__paragraph" onClick={() => dispatch(RemoveCartItem(product.id))}>remove</p>
                     </div>

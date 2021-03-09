@@ -47,11 +47,11 @@ const Row = ({o}) => {
                 <div className={style.detailsName}>
                     <p className="font__paragraph">{o.name}</p>
                 </div>
-                <div className={style.detailsName}>
-                    {
-                        o.specs.map(s => <p key={s.key} className="font__paragraph">{s.key}: {s.value}</p>)
-                    }
-                </div>
+                {/*<div className={style.detailsName}>*/}
+                {/*    {*/}
+                {/*        o.specs.map(s => <p key={s.key} className="font__paragraph">{s.key}: {s.value}</p>)*/}
+                {/*    }*/}
+                {/*</div>*/}
             </div>
         </div>
         <div>
