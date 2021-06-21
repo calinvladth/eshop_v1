@@ -6,6 +6,7 @@ import axios from "axios";
 import {api} from "../../../../../config";
 import {SetAlert} from "../../../../../redux/alerts/actions";
 import {useDispatch} from "react-redux";
+import {ValidateEmail, ValidateText} from "../../../../../services/validators";
 
 
 const FormComponent = () => {
@@ -17,7 +18,7 @@ const FormComponent = () => {
     const [email, setEmail] = useState('')
     const [emailError, setEmailError] = useState({
         show: false,
-        message: 'The email is required'
+        message: 'A valid email address is required'
     })
     const [subject, setSubject] = useState('')
     const [subjectError, setSubjectError] = useState({
@@ -45,6 +46,9 @@ const FormComponent = () => {
 
         if (!email && email.length === 0) {
             pass = false
+            setEmailError({...emailError, show: true})
+        } else if (email && email.length > 0) {
+            pass = ValidateEmail(email)
             setEmailError({...emailError, show: true})
         }
 
@@ -86,55 +90,64 @@ const FormComponent = () => {
         <form id="contactForm" className={style.form} onSubmit={(e) => submit(e)}>
             <div className={style.formGroup}>
                 <div>
+                    <label className="label">
+                        Your name
+                    </label>
                     <input
                         type="text"
-                        placeholder="Your name"
-                        className={`input ${nameError.show && name.length === 0 && "error"} ${nameError.show && name.length > 0 && "success"}`}
+                        className={`input ${nameError.show && !ValidateText(name) && "error"} ${ValidateText(name) && "success"}`}
                         value={name}
                         onChange={(e) => setName(e.target.value)}
                     />
                     {
-                        nameError.show && name.length === 0 && <span>{nameError.message}</span>
+                        nameError.show && !ValidateText(name) && <span>{nameError.message}</span>
                     }
                 </div>
 
                 <div>
+                    <label className="label">
+                        Your email
+                    </label>
                     <input
-                        type="email"
-                        placeholder="Your email"
-                        className={`input ${emailError.show && email.length === 0 && "error"} ${emailError.show && email.length > 0 && "success"}`}
+                        type="text"
+                        className={`input ${emailError.show && !ValidateEmail(email) && "error"} ${ValidateEmail(email) && "success"}`}
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                     />
                     {
-                        emailError.show && email.length === 0 && <span>{emailError.message}</span>
+                        emailError.show && !ValidateEmail(email) &&
+                        <span>{emailError.message}</span>
                     }
                 </div>
 
 
             </div>
             <div>
+                <label className="label">
+                    Subject
+                </label>
                 <input
                     type="text"
-                    placeholder="Subject"
-                    className={`input ${subjectError.show && subject.length === 0 && "error"} ${subjectError.show && subject.length > 0 && "success"}`}
+                    className={`input ${subjectError.show && !ValidateText(subject) && "error"} ${ValidateText(subject) && "success"}`}
                     value={subject}
                     onChange={(e) => setSubject(e.target.value)}
                 />
                 {
-                    subjectError.show && subject.length === 0 && <span>{subjectError.message}</span>
+                    subjectError.show && !ValidateText(subject) && <span>{subjectError.message}</span>
                 }
 
             </div>
             <div>
+                <label className="label">
+                    Message
+                </label>
                 <textarea
-                    placeholder="Message here ..."
-                    className={`textarea ${messageError.show && message.length === 0 && "error"} ${messageError.show && message.length > 0 && "success"}`}
+                    className={`textarea ${messageError.show && !ValidateText(message) && "error"} ${ValidateText(message) && "success"}`}
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
                 />
                 {
-                    messageError.show && message.length === 0 && <span>{messageError.message}</span>
+                    messageError.show && !ValidateText(message) && <span>{messageError.message}</span>
                 }
             </div>
             <div>
