@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import style from "./index.module.sass";
-import ProductComponent from "../../components/product";
-import Pagination from "../../components/pagination";
+import ProductComponent from "../product";
+import Pagination from "../pagination";
 import {useDispatch, useSelector} from "react-redux";
 import {GetProducts} from "../../redux/products/actions";
 import ShopFiltersComponent from "./shop_filters";

@@ -15,6 +15,11 @@ const InfoComponent = ({product = {}, specs = []}) => {
         setQuantity(newQuantity)
     }
 
+    function addToCart() {
+        window.scrollTo(0, 0)
+        dispatch(PostCartItem(product.data.id, quantity, false, true))
+    }
+
     return (
         <div className={style.box}>
 
@@ -22,7 +27,7 @@ const InfoComponent = ({product = {}, specs = []}) => {
             <div className={style.boxActions}>
                 <QuantityComponent quantity={quantity} editQuantity={editQuantity}/>
                 <button
-                    onClick={() => dispatch(PostCartItem(product.data.id, quantity, false, true))}
+                    onClick={() => addToCart()}
                     className={['button', 'button--full-red', style.infoSubmit].join(' ')}>Add
                     to cart
                 </button>
