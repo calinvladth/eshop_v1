@@ -1,0 +1,19 @@
+version: '3'
+networks:
+  dev:
+    external: true
+services:
+  eshop-v1:
+    container_name: eshop-v1
+    stdin_open: true
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      - "/app/node_modules"
+      - "./app:/app"
+    networks:
+      - dev
