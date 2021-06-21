@@ -25,7 +25,7 @@
   },
   "homepage": "./",
   "scripts": {
-    "start": "env-cmd -f ../.env react-scripts start",
+    "start": "env-cmd -f .env react-scripts start",
     "build": "react-scripts build",
     "build:production": "env-cmd -f ../.env.production yarn build",
     "test": "react-scripts test",
