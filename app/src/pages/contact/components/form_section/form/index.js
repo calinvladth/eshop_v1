@@ -100,7 +100,7 @@ const FormComponent = () => {
                         onChange={(e) => setName(e.target.value)}
                     />
                     {
-                        nameError.show && !ValidateText(name) && <span>{nameError.message}</span>
+                        nameError.show && !ValidateText(name) && <span className="labelError">{nameError.message}</span>
                     }
                 </div>
 
@@ -116,7 +116,7 @@ const FormComponent = () => {
                     />
                     {
                         emailError.show && !ValidateEmail(email) &&
-                        <span>{emailError.message}</span>
+                        <span className="labelError">{emailError.message}</span>
                     }
                 </div>
 
@@ -133,7 +133,7 @@ const FormComponent = () => {
                     onChange={(e) => setSubject(e.target.value)}
                 />
                 {
-                    subjectError.show && !ValidateText(subject) && <span>{subjectError.message}</span>
+                    subjectError.show && !ValidateText(subject) && <span className="labelError">{subjectError.message}</span>
                 }
 
             </div>
@@ -147,7 +147,7 @@ const FormComponent = () => {
                     onChange={(e) => setMessage(e.target.value)}
                 />
                 {
-                    messageError.show && !ValidateText(message) && <span>{messageError.message}</span>
+                    messageError.show && !ValidateText(message) && <span className="labelError">{messageError.message}</span>
                 }
             </div>
             <div>
